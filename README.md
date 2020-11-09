@@ -1,2 +1,2 @@
-# Runescape-bot
-Runescape bot prototype using cascade classifiers.
+# Runescape bot prototype
+Runescape bot prototype using OpenCV cascade classifiers and pyautogui.
