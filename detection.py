@@ -1,7 +1,7 @@
 import cv2 as cv
 from threading import Thread, Lock
 
-
+# this file detects the objects using machinelearning/cascade.xml
 class Detection:
 
     stopped = True

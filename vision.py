@@ -1,7 +1,7 @@
 import cv2 as cv
 import numpy as np
 
-
+# this file draws rectangles around objects detected by detetection.py
 class Vision:
 
     def get_click_points(self, rectangles):

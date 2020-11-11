@@ -1,9 +1,17 @@
+# This .py file is used to generate location-destination-location files for the bot to take after filling up inventory
+
 import win32api
 import time
 import pyautogui
 import keyboard
+from capture import WindowCapture
 
-time.sleep(3)
+wincap = WindowCapture('OSBuddy - 6ftclaud')
+
+def get_screen_position(pos):
+    return pos
+    #return (pos[0] + wincap.offset_x, pos[1] + wincap.offset_y)
+
 print("Started.")
 
 state_left = win32api.GetKeyState(0x01)
@@ -22,7 +30,11 @@ while True:
             if a < 0:
                 now = time.time()
                 loop_time = now - start
-                pos = str(x) + " " + str(y) + " " + str(loop_time) + " " + "left" "\n"
+                pos = ((x, y))
+                pos = get_screen_position((x, y))
+                x, y = pos
+                pos = None
+                pos = str(x) + " " + str(y) + " " + str(loop_time) + "\n"
                 print(pos)
                 file.write(pos)
                 start = time.time()
@@ -33,7 +45,11 @@ while True:
             if b < 0:
                 now = time.time()
                 loop_time = now - start
-                pos = str(x) + " " + str(y) + " " + str(loop_time) + " " + "right" "\n"
+                pos = ((x, y))
+                pos = get_screen_position((x, y))
+                x, y = pos
+                pos = None
+                pos = str(x) + " " + str(y) + " " + str(loop_time) + "\n"
                 print(pos)
                 file.write(pos)
                 start = time.time()

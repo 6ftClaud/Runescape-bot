@@ -8,8 +8,8 @@ from detection import Detection
 from vision import Vision
 from functions import BotActions, BotState
 
-
-DEBUG = True
+# Set to True if you want to see what the bot sees
+DEBUG = False
 
 wincap = WindowCapture('OSBuddy - 6ftclaud')
 detector = Detection('machinelearning/cascade.xml')
@@ -39,16 +39,7 @@ while(True):
 	elif bot.state == BotState.MINING:
 		pass
 	elif bot.state == BotState.STASHING:
-		#bot.navigate_to(bot.CURRENT_POSITION, bot.BANK)
-		#bot.navigate_to(bot.CURRENT_POSITION, bot.MINE)
-		wincap.stop()
-		detector.stop()
-		bot.stop()
-		if DEBUG == True:
-			cv.destroyAllWindows()
-		else:
-			pass
-		break
+		pass
 
 
 	if DEBUG == True:
@@ -68,4 +59,4 @@ while(True):
 			bot.stop()
 			break
 
-print('Done.')
+print('Bot stopped.')

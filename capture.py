@@ -2,7 +2,7 @@ import numpy as np
 import win32gui, win32ui, win32con
 from threading import Thread, Lock
 
-
+# this file captures the screen
 class WindowCapture:
 
     stopped = True
